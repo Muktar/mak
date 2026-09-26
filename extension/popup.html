@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shohoz Seat Runner</title><link rel="stylesheet" href="popup.css"></head>
+<body><main><h1>Shohoz Seat Runner</h1><p class="hint">তারিখ, ট্রেন ও সীট সেট করে Run চাপুন</p>
+<label>From station</label><input id="from" list="stations" placeholder="Dhaka"><datalist id="stations"><option>Dhaka</option><option>Chattogram</option><option>Cox's Bazar</option><option>Rajshahi</option><option>Khulna</option><option>Sylhet</option></datalist>
+<label>To station</label><input id="to" list="stations" placeholder="Cox's Bazar">
+<label>Journey date</label><input id="date" type="date">
+<label>Seat class</label><select id="klass"><option>AC_B</option><option>AC_S</option><option>SNIGDHA</option><option>S_CHAIR</option></select>
+<label>Train name/number</label><select id="train"><option value="">আগে route/date/class দিন</option></select><input id="trainText" placeholder="অথবা নাম/নম্বর লিখুন">
+<label>Seat selection mode</label><select id="mode"><option value="named">নির্দিষ্ট সীট</option><option value="auto">যেকোনো ফাঁকা সীট</option></select><label>Preferred seats (named mode)</label><input id="seats" placeholder="CHA-1, CHA-2"><label>How many seats</label><select id="count"><option value="1">1 seat</option><option value="2">2 seats</option><option value="3">3 seats</option><option value="4">4 seats</option></select>
+<button id="loadTrains" class="secondary">API থেকে ট্রেন লোড</button><label class="switch"><input id="enabled" type="checkbox"><span></span> Auto-run চালু</label>
+<button id="run">Run automation</button><button id="stop" class="secondary">Stop</button><div id="status" role="status"></div>
+<p class="note">Run search থেকে সীট বেছে final passenger-information page পর্যন্ত যাবে। CAPTCHA, login, payment বা final booking submit নিজে করবেন।</p></main><script src="popup.js"></script></body></html>

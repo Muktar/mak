@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Shohoz Train Seat Selector",
+  "version": "1.0.0",
+  "description": "পছন্দের সীট খালি হলে Shohoz Train seat layout-এ স্বয়ংক্রিয়ভাবে নির্বাচন করে।",
+  "permissions": [
+    "storage",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://train.shohoz.com/*",
+    "https://railspaapi.shohoz.com/*"
+  ],
+  "action": {
+    "default_title": "Shohoz Seat Selector",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://train.shohoz.com/*"
+      ],
+      "js": [
+        "station-list.js",
+        "train-list.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

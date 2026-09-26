@@ -1,0 +1,25 @@
+{
+  "name": "shohoz-seat-runner-desktop",
+  "version": "1.0.0",
+  "description": "Windows desktop wrapper for Shohoz Seat Runner",
+  "main": "main.js",
+  "author": "Nova",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.nova.shohozseatrunner",
+    "productName": "Shohoz Seat Runner",
+    "asar": true,
+    "files": ["main.js", "extension/**/*", "package.json"],
+    "directories": {"output": "dist"},
+    "win": {"target": ["nsis", "portable"]},
+    "nsis": {"oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true}
+  }
+}
